@@ -9,49 +9,38 @@ import styled from 'styled-components';
 class PollBee extends Component {
     state = {
         pollBank: [],
-        responses: 0,
+        current: 0,
+        completed: 0,
     };
 
+    // console.log(quizData[0].question)
     getPoll = () => {
         pollService().then(poll => {
             this.setState({
-                pollBank: poll
+                pollBank: poll,
             });
         });
     };
 
-    computeAnswer = (answer, correctAnswer) => {
-        if(answer === correctAnswer) {
-            this.setState({
-                score: this.state.score + 1
-            })
-        }
-            this.setState({
-                responses: this.state.responses < 1 ? this.state.responses + 1 : 1
-            })
-    }
     componentDidMount() {
         this.getPoll();
     }
 
     render() {
-        return (
+        return ( 
             <div className="container">
                 <div className="title"><center>PollSport</center></div>
                 {this.state.pollBank.length > 0 &&
-                this.state.responses < 1 &&
-                this.state.pollBank.map(({name, country, state, sport, awayName, homeName, id}) => 
-                <PollWrapper>
-                <PollCard 
-                    name={name} 
-                    country={country}
-                    state={state}
-                    sport={sport}
-                    homeName={homeName} 
-                    awayName={awayName} 
-                    key={id}/>
-                </PollWrapper>    
+                this.state.pollBank.map(({name, country, state, sport, homeName, awayName, draw, id}) => 
+                <PollWrapper key={id}>
+                    <PollCard name={name} country={country} state={state} sport={sport} 
+                    homeName={homeName} draw={draw} awayName={awayName} key={id}
+                    onClick={this.handleClick}
+                    />
+                </PollWrapper>
                 )}
+                <div completed={this.state.completed}>
+                </div>
             </div>
         );
     }
@@ -65,6 +54,5 @@ ReactDOM.render(<PollBee />, document.getElementById("root"));
         width: 100rem;
         border: 1px solid rgba(0, 0, 0, 0.2);
         border-radius: 3px;
-        background: grey;
         text-align: center;
         `

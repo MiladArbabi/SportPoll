@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
+    "react-overdrive": "0.0.10",
     "react-scripts": "3.2.0",
     "react-spring": "^8.0.27",
     "styled-components": "^4.4.0"
@@ -29,5 +30,21 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MiladArbabi/SportPoll.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Milad Arbabi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MiladArbabi/SportPoll/issues"
+  },
+  "homepage": "https://github.com/MiladArbabi/SportPoll#readme"
 }
