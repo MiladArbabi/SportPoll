@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+* {
+  font-family: "Raleway", sans-serif;
+}
+
+.title {
+  position: relative;
+  background-color: rgba(0, 0, 0, 1);
+  color: white;
+  padding: 10px;
+  font-size: 1.8em;
+  border-radius: 5px;
+}
+
+.pollInfo {
+  font-weight: bold;
+  margin-bottom: 5px;
+  border-radius: 10%;
+  background: #acb6e5
+}
+
+.name {
+  position: relative;
+  color: black;
+  padding: 10px;
+  font-size: 1.4em;
+}
+
+.country {
+  position: relative;
+  color: black;
+  padding: 10px;
+  font-size: 1em;
+}
+
+.sport {
+  position: relative;
+  color: black;
+  font-size: 1em;
+}
+
+.state {
+  position: relative;
+  color: black;
+  padding: 10px;
+  font-size: 1em;
+}
+
+.options {
+  text-align:center;
+  transition: all 0.2s;
+}
+.nextBtn{
+  font-size: 2.6vmin;
+  cursor: pointer;
+  margin-left: 140px;
+  width: 50%;
+  border-radius: 20%;
+  background-color: grey;
+  color: white;
+  border-style: dotted;
+}
+ .nextBtn:hover {
+          background-color: green;
+          color: black;   
+        }
