@@ -5,15 +5,13 @@ import pollService from './pollService'
 import PollCard from './components/PollCard';
 import styled from 'styled-components';
 
+class PollSport extends Component {
 
-class PollBee extends Component {
     state = {
         pollBank: [],
-        current: 0,
-        completed: 0,
     };
-
-    // console.log(quizData[0].question)
+    
+    
     getPoll = () => {
         pollService().then(poll => {
             this.setState({
@@ -24,6 +22,9 @@ class PollBee extends Component {
 
     componentDidMount() {
         this.getPoll();
+        this.setState((prevState, props) => {
+            return {pollBank: prevState.pollBank}
+        })
     }
 
     render() {
@@ -35,18 +36,26 @@ class PollBee extends Component {
                 <PollWrapper key={id}>
                     <PollCard name={name} country={country} state={state} sport={sport} 
                     homeName={homeName} draw={draw} awayName={awayName} key={id}
-                    onClick={this.handleClick}
+                    onClick={this.handleClick} src={""}
                     />
+                    <Logger />
                 </PollWrapper>
                 )}
-                <div completed={this.state.completed}>
-                </div>
             </div>
         );
     }
 }
 
-ReactDOM.render(<PollBee />, document.getElementById("root"));
+ReactDOM.render(<PollSport />, document.getElementById("root"));
+
+class Logger extends Component{
+    componentWillReceiveProps(newProps){
+      console.log("componentWillReceiveProps() is triggered");    
+    }
+    render(){
+      return <div/>
+    }
+  }
 
     const PollWrapper = styled.a`
         padding: 0.5rem 0;
