@@ -18,37 +18,61 @@ body{
   font-weight: bold;
   margin-bottom: 5px;
   border-radius: 10%;
-  background: #A7A5C6
+  background: #A7A5C6;
+  height: 200px;
+  background: linear-gradient(
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.3) 100%
+    ),
+    url('http://lorempixel.com/400/200/city') repeat-x;
 }
 .name {
-  position: relative;
-  color: black;
-  padding: 10px;
-  font-size: 1.2em;
-  font-weight: 100;
+  margin: 0 0 1rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  border-bottom: solid 2px #fbc89d;
+  font-weight: 400;
+  line-height: 2;
+  display: inline-block;
 }
 
 .country {
   position: relative;
   color: black;
   padding: 10px;
-  font-size: 1em;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 200;
 }
 
 .sport {
   position: relative;
   color: black;
-  font-size: 1em;
+  padding: 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 400;
 }
 
 .state {
   position: relative;
   color: black;
   padding: 10px;
-  font-size: 1em;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 800;
 }
 
 .options {
-  text-align:center;
-  transition: all 0.2s;
+  font-weight: bold;
+  margin-bottom: 5px;
+  border-radius: 10%;
+  background: #A7A5C6;
+  height: 150px;
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.3) 100%
+    ),
+    url('http://lorempixel.com/400/200/sports') repeat-x;
 }
