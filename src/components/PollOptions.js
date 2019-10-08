@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components';
-import propTypes from 'prop-types';
 
 const PollOptions = ({homeName, awayName, draw }) => {
   const handleSubmit = (e) => {
@@ -9,27 +8,33 @@ const PollOptions = ({homeName, awayName, draw }) => {
 
   return (
     <form className="options" onSubmit={handleSubmit} >
-        <StyledBtn className="homeName" value={homeName} onClick={e => console.log({homeName})}> {homeName} </StyledBtn> 
-        <StyledBtn className="draw" value={draw} onClick={e => console.log({draw})}> Draw </StyledBtn>
-        <StyledBtn className="awayName" value={awayName}  onClick={e => console.log({awayName})}>{awayName}</StyledBtn>
+        <StyledBtn className="homeName" value={homeName} 
+            onClick={e => console.log({homeName})}> {homeName} </StyledBtn> 
+        <StyledBtn className="draw" value={draw} 
+            onClick={e => console.log({draw})}> Draw </StyledBtn>
+        <StyledBtn className="awayName" value={awayName} 
+            onClick={e => console.log({awayName})}>{awayName}</StyledBtn>
     </form>    
   )}
 
 export default PollOptions;
 
 const StyledBtn = styled.button`
-  position: relative;
+  position: static;
   font-size: 2.6vmin;
   cursor: pointer;
-  margin: 5px;
+  margin: 10px;
   width: 50%;
+  border: ${props =>
+    props.primary ? '2px solid violet' : '2px solid palevioletred'};
   border-radius: 20%;
   background-color: #232020;
   color: white;
   border-style: dotted;
 
   :hover {
-    background-color: #778472;
+    background-color: ${props =>
+        props.primary ? 'violet' : 'palevioletred'};
     color: white; 
     width: 70%;  
     } 

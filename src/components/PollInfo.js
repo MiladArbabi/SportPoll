@@ -1,6 +1,4 @@
 import React from 'react'
-import styled from 'styled-components';
-import propTypes from 'prop-types';
 
 const PollInfo = ({name, country, state, sport}) => (
 <div className="pollInfo">

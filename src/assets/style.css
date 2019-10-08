@@ -19,13 +19,27 @@ body{
   margin-bottom: 5px;
   border-radius: 10%;
   background: #A7A5C6;
-  height: 200px;
+  height: 300px;
   background: linear-gradient(
       rgba(255, 255, 255, 1) 0%,
       rgba(255, 255, 255, 0.3) 100%
     ),
-    url('http://lorempixel.com/400/200/city') repeat-x;
+    url('http://lorempixel.com/400/200/city') repeat;
 }
+.options {
+  font-weight: bold;
+  margin-top: 5px;
+  border-radius: 10%;
+  background: #A7A5C6;
+  height: 175px;
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.3) 100%
+    ),
+    url('http://lorempixel.com/400/200/sports') repeat;
+}
+
 .name {
   margin: 0 0 1rem;
   font-family: 'Playfair Display', serif;
@@ -61,18 +75,4 @@ body{
   font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
   font-weight: 800;
-}
-
-.options {
-  font-weight: bold;
-  margin-bottom: 5px;
-  border-radius: 10%;
-  background: #A7A5C6;
-  height: 150px;
-  background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0.3) 100%
-    ),
-    url('http://lorempixel.com/400/200/sports') repeat-x;
 }
