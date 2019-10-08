@@ -1,19 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components';
 
 const PollOptions = ({homeName, awayName, draw }) => {
+  const [homeWin, setHomeWin] = useState('');
+  const [itsDraw, setDraw] = useState('');
+  const [awayWin, setAwayWin] = useState('');
+
+  
   const handleSubmit = (e) => {
     console.log('IM CLICKED IN HANDLESUBMIT');
   }
 
   return (
     <form className="options" onSubmit={handleSubmit} >
-        <StyledBtn className="homeName" value={homeName} 
-            onClick={e => console.log({homeName})}> {homeName} </StyledBtn> 
-        <StyledBtn className="draw" value={draw} 
-            onClick={e => console.log({draw})}> Draw </StyledBtn>
-        <StyledBtn className="awayName" value={awayName} 
-            onClick={e => console.log({awayName})}>{awayName}</StyledBtn>
+        <StyledBtn className="homeName" value={homeWin} 
+            onClick={e => setHomeWin(e.target.value)}> {homeName} </StyledBtn> 
+        <StyledBtn className="draw" value={itsDraw} 
+            onClick={e => setDraw(e.target.value)}> {draw} Draw </StyledBtn>
+        <StyledBtn className="awayName" value={awayWin} 
+            onClick={e => setAwayWin(e.target.value)}> {awayName} </StyledBtn>
     </form>    
   )}
 

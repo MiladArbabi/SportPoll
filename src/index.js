@@ -5,13 +5,12 @@ import styled from 'styled-components';
 
 import pollService from './pollService'
 import PollCard from './components/PollCard';
+import { usePollBank } from './hooks/usePollBank';
 
 class PollSport extends Component {
-
     state = {
         pollBank: [],
     };
-    
     
     getPoll = () => {
         pollService().then(poll => {
@@ -23,9 +22,6 @@ class PollSport extends Component {
 
     componentDidMount() {
         this.getPoll();
-        this.setState((prevState, props) => {
-            return {pollBank: prevState.pollBank}
-        })
     }
 
     render() {
@@ -36,8 +32,8 @@ class PollSport extends Component {
                 this.state.pollBank.map(({name, country, state, sport, homeName, awayName, draw, id}) => 
                 <PollWrapper key={id}>
                     <PollCard name={name} country={country} state={state} sport={sport} 
-                    homeName={homeName} draw={draw} awayName={awayName} key={id}
-                    onClick={this.handleClick} src={""}
+                    homeName={homeName} draw={draw} awayName={awayName} 
+                    key={id}
                     />
                 </PollWrapper>
                 )}
